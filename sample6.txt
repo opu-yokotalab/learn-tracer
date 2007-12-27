@@ -1,0 +1,392 @@
+GNU gdb 6.4.90
+Copyright (C) 2006 Free Software Foundation, Inc.
+GDB is free software, covered by the GNU General Public License, and you are
+welcome to change it and/or distribute copies of it under certain conditions.
+Type "show copying" to see the conditions.
+There is absolutely no warranty for GDB.  Type "show warranty" for details.
+This GDB was configured as "i386-vine-linux"...Using host libthread_db library "/lib/libthread_db.so.1".
+
+(gdb) source sam.gdbinit 
+Breakpoint 1 at 0x804841f: file sort.c, line 18.
+
+Breakpoint 1, main () at sort.c:18
+18	 	int a[] = {5, 9, 1, 2, 0, 4, 3};
+$1 = {-1208310440, 134518404, -1077125288, 134513293, -1208315916, -1208216452, -1077125256}
+$2 = -1208180748
+19		int i,l=1;
+2: i = -1208180748
+1: a = {5, 9, 1, 2, 0, 4, 3}
+21	 	insertion_sort(a, sizeof(a) / sizeof(int));
+2: i = -1208180748
+1: a = {5, 9, 1, 2, 0, 4, 3}
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:9
+9		for (i = 1; i < n; i++) {
+$3 = -1209007008
+$4 = 1
+10		  j = i;
+4: j = 1
+3: i = 1
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 1
+3: i = 1
+9		for (i = 1; i < n; i++) {
+4: j = 1
+3: i = 1
+10		  j = i;
+4: j = 1
+3: i = 2
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 2
+3: i = 2
+12		    swap(&a[j], &a[j - 1]);
+4: j = 2
+3: i = 2
+swap (a=0xbfcc5f48, b=0xbfcc5f44) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+$5 = -1209370656
+$6 = 0x1
+$7 = 0x9
+4	}
+7: /a *b = 0x1
+6: /a *a = 0x9
+5: c = 1
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 2
+3: i = 2
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 1
+3: i = 2
+12		    swap(&a[j], &a[j - 1]);
+4: j = 1
+3: i = 2
+swap (a=0xbfcc5f44, b=0xbfcc5f40) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x5
+6: /a *a = 0x1
+5: c = 1
+4	}
+7: /a *b = 0x1
+6: /a *a = 0x5
+5: c = 1
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 1
+3: i = 2
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 0
+3: i = 2
+9		for (i = 1; i < n; i++) {
+4: j = 0
+3: i = 2
+10		  j = i;
+4: j = 0
+3: i = 3
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 3
+3: i = 3
+12		    swap(&a[j], &a[j - 1]);
+4: j = 3
+3: i = 3
+swap (a=0xbfcc5f4c, b=0xbfcc5f48) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x9
+6: /a *a = 0x2
+5: c = 1
+4	}
+7: /a *b = 0x2
+6: /a *a = 0x9
+5: c = 2
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 3
+3: i = 3
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 2
+3: i = 3
+12		    swap(&a[j], &a[j - 1]);
+4: j = 2
+3: i = 3
+swap (a=0xbfcc5f48, b=0xbfcc5f44) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x5
+6: /a *a = 0x2
+5: c = 2
+4	}
+7: /a *b = 0x2
+6: /a *a = 0x5
+5: c = 2
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 2
+3: i = 3
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 1
+3: i = 3
+9		for (i = 1; i < n; i++) {
+4: j = 1
+3: i = 3
+10		  j = i;
+4: j = 1
+3: i = 4
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 4
+3: i = 4
+12		    swap(&a[j], &a[j - 1]);
+4: j = 4
+3: i = 4
+swap (a=0xbfcc5f50, b=0xbfcc5f4c) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x9
+6: /a *a = 0x0
+5: c = 2
+4	}
+7: /a *b = 0x0
+6: /a *a = 0x9
+5: c = 0
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 4
+3: i = 4
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 3
+3: i = 4
+12		    swap(&a[j], &a[j - 1]);
+4: j = 3
+3: i = 4
+swap (a=0xbfcc5f4c, b=0xbfcc5f48) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x5
+6: /a *a = 0x0
+5: c = 0
+4	}
+7: /a *b = 0x0
+6: /a *a = 0x5
+5: c = 0
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 3
+3: i = 4
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 2
+3: i = 4
+12		    swap(&a[j], &a[j - 1]);
+4: j = 2
+3: i = 4
+swap (a=0xbfcc5f48, b=0xbfcc5f44) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x2
+6: /a *a = 0x0
+5: c = 0
+4	}
+7: /a *b = 0x0
+6: /a *a = 0x2
+5: c = 0
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 2
+3: i = 4
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 1
+3: i = 4
+12		    swap(&a[j], &a[j - 1]);
+4: j = 1
+3: i = 4
+swap (a=0xbfcc5f44, b=0xbfcc5f40) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x1
+6: /a *a = 0x0
+5: c = 0
+4	}
+7: /a *b = 0x0
+6: /a *a = 0x1
+5: c = 0
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 1
+3: i = 4
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 0
+3: i = 4
+9		for (i = 1; i < n; i++) {
+4: j = 0
+3: i = 4
+10		  j = i;
+4: j = 0
+3: i = 5
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 5
+3: i = 5
+12		    swap(&a[j], &a[j - 1]);
+4: j = 5
+3: i = 5
+swap (a=0xbfcc5f54, b=0xbfcc5f50) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x9
+6: /a *a = 0x4
+5: c = 0
+4	}
+7: /a *b = 0x4
+6: /a *a = 0x9
+5: c = 4
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 5
+3: i = 5
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 4
+3: i = 5
+12		    swap(&a[j], &a[j - 1]);
+4: j = 4
+3: i = 5
+swap (a=0xbfcc5f50, b=0xbfcc5f4c) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x5
+6: /a *a = 0x4
+5: c = 4
+4	}
+7: /a *b = 0x4
+6: /a *a = 0x5
+5: c = 4
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 4
+3: i = 5
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 3
+3: i = 5
+9		for (i = 1; i < n; i++) {
+4: j = 3
+3: i = 5
+10		  j = i;
+4: j = 3
+3: i = 6
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 6
+3: i = 6
+12		    swap(&a[j], &a[j - 1]);
+4: j = 6
+3: i = 6
+swap (a=0xbfcc5f58, b=0xbfcc5f54) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x9
+6: /a *a = 0x3
+5: c = 4
+4	}
+7: /a *b = 0x3
+6: /a *a = 0x9
+5: c = 3
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 6
+3: i = 6
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 5
+3: i = 6
+12		    swap(&a[j], &a[j - 1]);
+4: j = 5
+3: i = 6
+swap (a=0xbfcc5f54, b=0xbfcc5f50) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x5
+6: /a *a = 0x3
+5: c = 3
+4	}
+7: /a *b = 0x3
+6: /a *a = 0x5
+5: c = 3
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 5
+3: i = 6
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 4
+3: i = 6
+12		    swap(&a[j], &a[j - 1]);
+4: j = 4
+3: i = 6
+swap (a=0xbfcc5f50, b=0xbfcc5f4c) at sort.c:3
+3	  c = *a; *a = *b; *b = c;
+7: /a *b = 0x4
+6: /a *a = 0x3
+5: c = 3
+4	}
+7: /a *b = 0x3
+6: /a *a = 0x4
+5: c = 3
+insertion_sort (a=0xbfcc5f40, n=7) at sort.c:13
+13		    j--;
+4: j = 4
+3: i = 6
+11		  while ((j > 0) && (a[j] < a[j - 1])) {
+4: j = 3
+3: i = 6
+9		for (i = 1; i < n; i++) {
+4: j = 3
+3: i = 6
+16	} 
+4: j = 3
+3: i = 7
+main () at sort.c:23
+23		printf("a[]=");	
+2: i = -1208180748
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = -1208180748
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 0
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 0
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 1
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 1
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 2
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 2
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 3
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 3
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 4
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 4
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 5
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 5
+1: a = {0, 1, 2, 3, 4, 5, 9}
+26		  printf("%d,",a[i]);
+2: i = 6
+1: a = {0, 1, 2, 3, 4, 5, 9}
+25		for(i=0;i<7;i++){
+2: i = 6
+1: a = {0, 1, 2, 3, 4, 5, 9}
+28		printf("\n");
+2: i = 7
+1: a = {0, 1, 2, 3, 4, 5, 9}
+29	 	return 0;
+2: i = 7
+1: a = {0, 1, 2, 3, 4, 5, 9}
+30	}
+2: i = 7
+1: a = {0, 1, 2, 3, 4, 5, 9}
+0xb7eb6427 in __libc_start_main () from /lib/libc.so.6
+Single stepping until exit from function __libc_start_main, 
+which has no line number information.
+
+Program exited normally.
